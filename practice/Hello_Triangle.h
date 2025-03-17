@@ -1,5 +1,5 @@
-#ifndef PRACTICE_H
-#define PRACTICE_H
+#ifndef HELLO_TRIANGLE_H
+#define HELLO_TRIANGLE_H
 
 #pragma once
 int draw_single_triangle();

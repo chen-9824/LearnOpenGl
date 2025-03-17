@@ -8,10 +8,18 @@ include_directories(${CMAKE_SOURCE_DIR}/glad/include)
 add_library(glad ${CMAKE_SOURCE_DIR}/glad/src/glad.c)
 
 include_directories(${CMAKE_SOURCE_DIR}/spdlog/include)
+include_directories(${CMAKE_SOURCE_DIR}/practice)
+include_directories(${CMAKE_SOURCE_DIR}/stb)
 
-add_executable(LearnOpenGl main.cpp practice.cpp)
+add_executable(LearnOpenGl main.cpp )
 
 target_precompile_headers(LearnOpenGl PRIVATE pch.h)
 
 #target_link_libraries(LearnOpenGl  -lglfw glad -ldl spdlog::spdlog)
 target_link_libraries(LearnOpenGl  -lglfw glad -ldl)
+target_sources(LearnOpenGl PRIVATE 
+${CMAKE_SOURCE_DIR}/stb/stb_image.cpp 
+${CMAKE_SOURCE_DIR}/practice/Hello_Triangle.cpp 
+${CMAKE_SOURCE_DIR}/practice/P1_5_Shader.cpp 
+${CMAKE_SOURCE_DIR}/practice/P1_6_Texture.cpp 
+${CMAKE_SOURCE_DIR}/practice/Shader.cpp)

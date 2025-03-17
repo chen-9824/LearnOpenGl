@@ -1,31 +1,31 @@
-#include "practice.h"
+#include "Hello_Triangle.h"
 
-#include "pch.h"
+#include "../pch.h"
 
 void framebuffer_size_cb(GLFWwindow *window, int width, int height);
 void process_input(GLFWwindow *window);
 
-const unsigned int SCR_WIDTH = 800;
-const unsigned int SCR_HEIGHT = 600;
+static const unsigned int SCR_WIDTH = 800;
+static const unsigned int SCR_HEIGHT = 600;
 
-const char *vertexShaderSource1 = "#version 330 core\n"
-                                  "layout (location = 0) in vec3 aPos;\n"
-                                  "void main()\n"
-                                  "{\n"
-                                  "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-                                  "}\0";
-const char *fragmentShaderSource1 = "#version 330 core\n"
-                                    "out vec4 FragColor;\n"
-                                    "void main()\n"
-                                    "{\n"
-                                    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-                                    "}\n\0";
-const char *fragmentShaderSource2 = "#version 330 core\n"
-                                    "out vec4 FragColor;\n"
-                                    "void main()\n"
-                                    "{\n"
-                                    "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
-                                    "}\n\0";
+static const char *vertexShaderSource1 = "#version 330 core\n"
+                                         "layout (location = 0) in vec3 aPos;\n"
+                                         "void main()\n"
+                                         "{\n"
+                                         "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                         "}\0";
+static const char *fragmentShaderSource1 = "#version 330 core\n"
+                                           "out vec4 FragColor;\n"
+                                           "void main()\n"
+                                           "{\n"
+                                           "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+                                           "}\n\0";
+static const char *fragmentShaderSource2 = "#version 330 core\n"
+                                           "out vec4 FragColor;\n"
+                                           "void main()\n"
+                                           "{\n"
+                                           "   FragColor = vec4(1.0f, 1.0f, 0.0f, 1.0f);\n"
+                                           "}\n\0";
 
 GLFWwindow *init(const std::string &title)
 {
